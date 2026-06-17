@@ -1,0 +1,1411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Father's Day 💙</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Segoe UI',sans-serif;
+    background:linear-gradient(135deg,#0f172a,#2563eb);
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+
+    align-items:flex-start;
+
+    padding:20px;
+
+    overflow-x:hidden;
+    overflow-y:auto;
+}
+.card {
+    width: min(100%, 420px);
+    background: white;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0,0,0,.3);
+    text-align: center;
+    z-index: 10;
+
+    animation:
+    fadeIn 1s ease,
+    cardFloat 4s ease-in-out infinite;
+
+    margin-bottom: 120px; /* FIX: space for footer */
+}
+
+.card{
+    width:min(100%,420px);
+
+    background:white;
+
+    border-radius:25px;
+
+    overflow:hidden;
+
+    box-shadow:0 20px 50px rgba(0,0,0,.3);
+
+    text-align:center;
+
+    z-index:10;
+
+    animation:
+    fadeIn 1s ease,
+    cardFloat 4s ease-in-out infinite;
+}
+.card-header{
+    background:linear-gradient(135deg,#1e3a8a,#2563eb);
+    color:white;
+    padding:30px;
+}
+
+.card-header h1{
+    font-size:2rem;
+    margin-bottom:10px;
+}
+
+.card-body{
+    padding:25px;
+}
+
+.photo-frame{
+    display:flex;
+    justify-content:center;
+    margin-bottom:20px;
+}
+
+.photo-frame img{
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    object-fit:cover;
+    border:6px solid #2563eb;
+    box-shadow:0 0 30px rgba(37,99,235,.5);
+    animation:pulse 2s infinite;
+}
+
+.message{
+    color:#555;
+    line-height:1.8;
+    margin-bottom:20px;
+    font-size:1rem;
+}
+
+.signature{
+    font-size:1.2rem;
+    font-weight:bold;
+    color:#2563eb;
+}
+
+.btn{
+    margin:8px;
+    padding:12px 22px;
+    border:none;
+    border-radius:30px;
+    background:#2563eb;
+    color:white;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+}
+
+.volume{
+    width:220px;
+    margin-top:10px;
+}
+
+/* Balloons */
+#balloon-container{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+}
+
+.balloon{
+    position:absolute;
+    bottom:-120px;
+    width:50px;
+    height:65px;
+    border-radius:50%;
+    animation:floatUp linear forwards;
+}
+
+.balloon::before{
+    content:"";
+    position:absolute;
+    width:12px;
+    height:12px;
+    background:inherit;
+    bottom:-5px;
+    left:19px;
+    transform:rotate(45deg);
+}
+
+.balloon::after{
+    content:"";
+    position:absolute;
+    width:2px;
+    height:60px;
+    background:#999;
+    top:65px;
+    left:24px;
+}
+
+/* Hearts */
+.heart{
+    position:fixed;
+    font-size:30px;
+    pointer-events:none;
+    animation:heartFloat 5s linear forwards;
+}
+
+@keyframes floatUp{
+    from{
+        transform:translateY(0);
+        opacity:1;
+    }
+    to{
+        transform:translateY(-120vh);
+        opacity:0;
+    }
+}
+
+@keyframes heartFloat{
+    from{
+        transform:translateY(0);
+        opacity:1;
+    }
+    to{
+        transform:translateY(-100vh);
+        opacity:0;
+    }
+}
+
+@keyframes pulse{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.05);}
+    100%{transform:scale(1);}
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+/* Fun Corner Buttons */
+.corner{
+    position:fixed;
+    width:60px;
+    height:60px;
+    border:none;
+    border-radius:50%;
+    font-size:26px;
+    cursor:pointer;
+    color:white;
+    z-index:999;
+    transition:.3s;
+    box-shadow:0 8px 25px rgba(0,0,0,.3);
+}
+
+.corner:hover{
+    transform:scale(1.15);
+}
+
+.top-left{
+    top:15px;
+    left:15px;
+    background:#ff4d6d;
+}
+
+.top-right{
+    top:15px;
+    right:15px;
+    background:#ff9f1c;
+}
+
+.bottom-left{
+    bottom:15px;
+    left:15px;
+    background:#7b2cbf;
+}
+
+.bottom-right{
+    bottom:15px;
+    right:15px;
+    background:#06d6a0;
+}
+@keyframes fireGlow{
+    0%{
+        filter:drop-shadow(0 0 5px orange);
+    }
+    50%{
+        filter:drop-shadow(0 0 25px red);
+    }
+    100%{
+        filter:drop-shadow(0 0 5px orange);
+    }
+}
+
+.top-left{
+    animation:fireGlow 1s infinite;
+}
+/* =========================
+   CINEMATIC BUTTONS
+========================= */
+
+.btn{
+    margin:8px;
+    padding:14px 26px;
+    border:none;
+    border-radius:40px;
+    background:linear-gradient(135deg,#2563eb,#1e40af);
+    color:white;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:700;
+    position:relative;
+    overflow:hidden;
+    transition:all .4s ease;
+    box-shadow:0 10px 25px rgba(37,99,235,.4);
+}
+
+.btn:hover{
+
+    transform:
+    translateY(-6px)
+    scale(1.08);
+
+    box-shadow:
+    0 0 20px #60a5fa,
+    0 0 40px #3b82f6,
+    0 0 80px #2563eb;
+}
+
+.btn:active{
+
+    transform:
+    translateY(0)
+    scale(.95);
+}
+
+.btn::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:-100%;
+
+    width:100%;
+    height:100%;
+
+    background:
+    linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.6),
+        transparent
+    );
+
+    transition:.8s;
+}
+
+.btn:hover::before{
+    left:100%;
+}
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+
+    text-align: center;
+    padding: 8px;
+    font-size: 16px;
+
+    background: linear-gradient(
+        80deg,
+        red,
+        orange,
+        yellow,
+        green,
+        blue,
+        indigo,
+        violet
+    );
+
+    color: black;
+    font-weight: bold;
+    z-index: 9999;
+}
+
+/* =========================
+   LEGENDARY CORNER BUTTONS
+========================= */
+
+.corner{
+
+    position:fixed;
+
+    width:70px;
+    height:70px;
+
+    border:none;
+    border-radius:50%;
+
+    font-size:32px;
+
+    cursor:pointer;
+
+    color:white;
+
+    z-index:9999;
+
+    transition:.4s;
+
+    box-shadow:
+    0 0 15px rgba(255,255,255,.3);
+
+    animation:
+    pulseGlow 2s infinite;
+}
+
+.corner:hover{
+
+    transform:
+    scale(1.25)
+    rotate(20deg);
+
+    box-shadow:
+    0 0 20px white,
+    0 0 40px gold,
+    0 0 80px orange;
+}
+
+.top-left{
+    background:linear-gradient(135deg,#ff416c,#ff4b2b);
+}
+
+.top-right{
+    background:linear-gradient(135deg,#ff9800,#ffd600);
+}
+
+.bottom-left{
+    background:linear-gradient(135deg,#7b2cbf,#4361ee);
+}
+
+.bottom-right{
+    background:linear-gradient(135deg,#00c853,#64dd17);
+}
+
+@keyframes pulseGlow{
+
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.08);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+}
+
+/* =========================
+   CARD CINEMA EFFECT
+========================= */
+
+.card{
+
+    animation:
+    fadeIn 1s ease,
+    cardFloat 4s ease-in-out infinite;
+}
+
+@keyframes cardFloat{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-10px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+}
+/* =========================
+   MOBILE VERSION
+========================= */
+
+@media (max-width:600px){
+
+    body{
+        padding:12px;
+    }
+
+    .card{
+        width:100%;
+        border-radius:20px;
+    }
+
+    .card-header{
+        padding:22px;
+    }
+
+    .card-header h1{
+        font-size:1.5rem;
+    }
+
+    .card-body{
+        padding:18px;
+    }
+
+    .photo-frame img{
+        width:140px;
+        height:140px;
+    }
+
+    .message{
+        font-size:.95rem;
+        line-height:1.6;
+    }
+
+    .signature{
+        font-size:1rem;
+    }
+
+    .btn{
+        width:100%;
+        margin:6px 0;
+        font-size:15px;
+    }
+
+    .volume{
+        width:100%;
+    }
+
+    .corner{
+        width:55px;
+        height:55px;
+        font-size:24px;
+    }
+
+    .top-left{
+        top:10px;
+        left:10px;
+    }
+
+    .top-right{
+        top:10px;
+        right:10px;
+    }
+
+    .bottom-left{
+        bottom:10px;
+        left:10px;
+    }
+
+    .bottom-right{
+        bottom:10px;
+        right:10px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+    <div class="card-header">
+        <h1>💙 Happy Father's Day 💙</h1>
+        <p>To The World's Greatest Dad 🏆</p>
+    </div>
+
+    <div class="card-body">
+
+        <div class="photo-frame">
+            <img src="your-photo.jpg.png" alt="Dad">
+        </div>
+
+        <div class="message">
+            Dear Dad,<br><br>
+
+            Thank you for your endless love,
+            strength, guidance and support.<br><br>
+
+            You are my first hero,
+            my greatest teacher,
+            and my forever inspiration.<br><br>
+
+            Happy Father's Day! 💙
+        </div>
+
+        <div class="signature">
+            With Love,<br>
+            Naksh ❤️
+        </div>
+
+        <button class="btn" onclick="celebrate()">
+            🎊 Celebrate
+        </button>
+
+        <button class="btn" onclick="playMusic()">
+            ▶ Play Song
+        </button>
+
+        <button class="btn" onclick="pauseMusic()">
+            ⏸ Stop Song
+        </button>
+
+        <button class="btn" onclick="hallOfFame()">
+            🏆 Hall of Fame
+        </button>
+
+        <button class="btn" onclick="dadWisdom()">
+          💡 Dad Wisdom
+        </button>
+
+        <button class="btn" onclick="dadCertificate()">
+           📜 Certificate
+        </button>
+
+         <button class="btn" onclick="cinemaMode()">
+         🎬 Cinema
+         </button>
+
+        <br>
+
+        <input
+            class="volume"
+            type="range"
+            min="0"
+            max="1"
+            step="0.1"
+            value="0.5"
+            oninput="changeVolume(this.value)"
+        >
+
+    </div>
+
+</div>
+
+<audio id="bgMusic" autoplay loop>
+    <source src="song.mp3.aac" type="audio/mpeg">
+</audio>
+
+<div id="balloon-container"></div>
+<button class="corner top-left" onclick="ultimateDadMode()">💥</button>
+
+<button class="corner top-right" onclick="dadPower()">🔥</button>
+
+<button class="corner bottom-left" onclick="fireworks()">🎆</button>
+
+<button class="corner bottom-right" onclick="surprise()">🎰</button>
+</style>
+
+<script>
+    function ultimateDadMode(){
+
+    celebrate();
+
+    const card = document.querySelector(".card");
+
+    card.animate(
+    [
+        {transform:"scale(1) rotate(0deg)"},
+        {transform:"scale(1.08) rotate(-2deg)"},
+        {transform:"scale(1.08) rotate(2deg)"},
+        {transform:"scale(1.08) rotate(-2deg)"},
+        {transform:"scale(1.08) rotate(0deg)"}
+    ],
+    {
+        duration:1200
+    });
+
+    const title = document.createElement("div");
+
+    title.innerHTML = "👑 ULTIMATE DAD MODE 👑";
+
+    title.style.position = "fixed";
+    title.style.top = "50%";
+    title.style.left = "50%";
+    title.style.transform = "translate(-50%,-50%)";
+    title.style.fontSize = "60px";
+    title.style.fontWeight = "900";
+    title.style.zIndex = "99999";
+    title.style.color = "gold";
+    title.style.textShadow =
+    "0 0 10px gold,0 0 20px orange,0 0 40px red";
+
+    document.body.appendChild(title);
+
+    title.animate(
+    [
+        {transform:"translate(-50%,-50%) scale(0)",opacity:0},
+        {transform:"translate(-50%,-50%) scale(1.2)",opacity:1},
+        {transform:"translate(-50%,-50%) scale(1)",opacity:1}
+    ],
+    {
+        duration:800,
+        fill:"forwards"
+    });
+
+    setTimeout(()=>{
+        title.remove();
+    },3000);
+
+    for(let i=0;i<120;i++){
+
+        const fire = document.createElement("div");
+
+        fire.innerHTML =
+        ["🔥","👑","🔥","🔥","💥"][Math.floor(Math.random()*5)];
+
+        fire.style.position = "fixed";
+        fire.style.left = Math.random()*100+"vw";
+        fire.style.top = "-50px";
+        fire.style.fontSize =
+        (25 + Math.random()*25)+"px";
+        fire.style.zIndex = "9999";
+        fire.style.pointerEvents = "none";
+
+        document.body.appendChild(fire);
+
+        fire.animate(
+        [
+            {transform:"translateY(0)",opacity:1},
+            {transform:"translateY(110vh)",opacity:0}
+        ],
+        {
+            duration:3000 + Math.random()*2000,
+            easing:"linear"
+        });
+
+        setTimeout(()=>{
+            fire.remove();
+        },5000);
+    }
+}
+function dadPower(){
+
+    const popup = document.createElement("div");
+
+    popup.innerHTML = "👑 World's Greatest Dad 👑";
+
+    popup.style.position = "fixed";
+    popup.style.top = "50%";
+    popup.style.left = "50%";
+    popup.style.transform = "translate(-50%,-50%) scale(0)";
+    popup.style.fontSize = "48px";
+    popup.style.fontWeight = "900";
+    popup.style.zIndex = "99999";
+    popup.style.padding = "25px 40px";
+    popup.style.borderRadius = "25px";
+    popup.style.background = "rgba(255,255,255,.15)";
+    popup.style.backdropFilter = "blur(15px)";
+    popup.style.border = "3px solid white";
+    popup.style.textAlign = "center";
+
+    popup.style.backgroundImage =
+    "linear-gradient(90deg,#ff0000,#ff9900,#ffff00,#00ff00,#00ffff,#0000ff,#ff00ff,#ff0000)";
+
+    popup.style.backgroundSize = "400%";
+    popup.style.webkitBackgroundClip = "text";
+    popup.style.webkitTextFillColor = "transparent";
+
+    document.body.appendChild(popup);
+
+    popup.animate(
+    [
+        {
+            transform:"translate(-50%,-50%) scale(0)",
+            opacity:0
+        },
+        {
+            transform:"translate(-50%,-50%) scale(1.2)",
+            opacity:1
+        },
+        {
+            transform:"translate(-50%,-50%) scale(1)",
+            opacity:1
+        }
+    ],
+    {
+        duration:700,
+        fill:"forwards"
+    });
+
+    let pos = 0;
+
+    const rgb = setInterval(()=>{
+        pos += 5;
+        popup.style.backgroundPosition = pos + "%";
+    },50);
+
+    setTimeout(()=>{
+
+        clearInterval(rgb);
+
+        popup.animate(
+        [
+            {
+                opacity:1,
+                transform:"translate(-50%,-50%) scale(1)"
+            },
+            {
+                opacity:0,
+                transform:"translate(-50%,-50%) scale(2)"
+            }
+        ],
+        {
+            duration:800,
+            fill:"forwards"
+        });
+
+        setTimeout(()=>{
+            popup.remove();
+        },800);
+
+    },3000);
+}
+function surprise(){
+
+    const rewards = [
+        "🏆 BEST DAD AWARD By NKKKSK",
+        "👑 DAD KING OF THE YEAR By NKKKSK ",
+        "🚀 SUPERHERO DAD By NKKKSK ",
+        "💙 UNLIMITED LOVE BONUS By By NKKKSK ",
+        "🎁 SECRET GIFT UNLOCKED By By NKKKSK"
+    ];
+
+    const prize =
+    rewards[Math.floor(Math.random()*rewards.length)];
+
+    const popup = document.createElement("div");
+
+    popup.innerHTML = `
+        <div style="font-size:70px">🎰</div>
+        <div style="font-size:28px;margin:15px 0;">
+            JACKPOT!
+        </div>
+        <div style="font-size:22px;">
+            ${prize}
+        </div>
+    `;
+
+    popup.style.position = "fixed";
+    popup.style.top = "50%";
+    popup.style.left = "50%";
+    popup.style.transform = "translate(-50%,-50%) scale(0)";
+    popup.style.background =
+    "linear-gradient(135deg,#ffcc00,#ff6600)";
+    popup.style.color = "white";
+    popup.style.padding = "35px";
+    popup.style.borderRadius = "25px";
+    popup.style.textAlign = "center";
+    popup.style.fontWeight = "bold";
+    popup.style.boxShadow =
+    "0 0 40px rgba(255,200,0,.8)";
+    popup.style.zIndex = "99999";
+
+    document.body.appendChild(popup);
+
+    popup.animate(
+    [
+        {transform:"translate(-50%,-50%) scale(0) rotate(-180deg)"},
+        {transform:"translate(-50%,-50%) scale(1.15) rotate(10deg)"},
+        {transform:"translate(-50%,-50%) scale(1) rotate(0deg)"}
+    ],
+    {
+        duration:800,
+        fill:"forwards"
+    });
+
+    /* Jackpot coins */
+
+    for(let i=0;i<80;i++){
+
+        const coin =
+        document.createElement("div");
+
+        coin.innerHTML =
+        Math.random() > 0.5 ? "🪙" : "💰";
+
+        coin.style.position = "fixed";
+        coin.style.left =
+        Math.random()*100+"vw";
+
+        coin.style.top = "-50px";
+        coin.style.fontSize = "30px";
+        coin.style.zIndex = "9999";
+
+        document.body.appendChild(coin);
+
+        coin.animate(
+        [
+            {transform:"translateY(0) rotate(0deg)"},
+            {transform:"translateY(110vh) rotate(720deg)"}
+        ],
+        {
+            duration:3000 + Math.random()*2000,
+            easing:"linear"
+        });
+
+        setTimeout(()=>{
+            coin.remove();
+        },5000);
+    }
+
+    setTimeout(()=>{
+        popup.remove();
+    },4000);
+}
+/* =========================
+   👑 FLOATING CROWN
+========================= */
+
+const crown = document.createElement("div");
+
+crown.innerHTML = "👑";
+
+crown.style.position = "absolute";
+crown.style.top = "-35px";
+crown.style.left = "50%";
+crown.style.transform = "translateX(-50%)";
+crown.style.fontSize = "55px";
+crown.style.zIndex = "100";
+
+document.querySelector(".photo-frame").appendChild(crown);
+
+setInterval(()=>{
+    crown.style.transform =
+    `translateX(-50%) translateY(${Math.sin(Date.now()/300)*8}px)`;
+},30);
+
+
+/* =========================
+   💙 LOVE LEVEL
+========================= */
+
+const loveMeter = document.createElement("h3");
+
+loveMeter.id = "loveMeter";
+
+loveMeter.innerHTML =
+"💙 Love Level: 0%";
+
+loveMeter.style.color = "#2563eb";
+loveMeter.style.marginTop = "15px";
+
+document.querySelector(".signature")
+.after(loveMeter);
+
+let love = 0;
+
+setInterval(()=>{
+
+    if(love < 100){
+
+        love++;
+
+        loveMeter.innerHTML =
+        `💙 Love Level: ${love}%`;
+
+    }
+
+},80);
+
+
+/* =========================
+   🏆 DAD SCORE
+========================= */
+
+const scoreText =
+document.createElement("h3");
+
+scoreText.innerHTML =
+"🏆 Dad Score: 0";
+
+scoreText.style.color = "gold";
+
+loveMeter.after(scoreText);
+
+let score = 0;
+
+setInterval(()=>{
+
+    score += 10;
+
+    scoreText.innerHTML =
+    "🏆 Dad Score: " + score;
+
+},200);
+
+
+/* =========================
+   ⭐ FALLING STARS
+========================= */
+
+setInterval(()=>{
+
+    const star =
+    document.createElement("div");
+
+    star.innerHTML =
+    ["⭐","✨","💙"][Math.floor(Math.random()*3)];
+
+    star.style.position = "fixed";
+    star.style.left =
+    Math.random()*100+"vw";
+
+    star.style.top = "-30px";
+
+    star.style.fontSize = "20px";
+
+    star.style.pointerEvents="none";
+
+    document.body.appendChild(star);
+
+    star.animate(
+    [
+        {transform:"translateY(0)"},
+        {transform:"translateY(110vh)"}
+    ],
+    {
+        duration:5000
+    });
+
+    setTimeout(()=>{
+        star.remove();
+    },5000);
+
+},350);
+
+
+/* =========================
+   🏆 HALL OF FAME
+========================= */
+
+function hallOfFame(){
+
+    const awards = [
+
+        "👑 Best Dad",
+
+        "💪 Strongest Hero",
+
+        "❤️ Biggest Heart",
+
+        "🎓 Best Teacher",
+
+        "🌟 Forever Inspiration"
+
+    ];
+
+    awards.forEach((award,index)=>{
+
+        setTimeout(()=>{
+
+            const badge =
+            document.createElement("div");
+
+            badge.innerHTML =
+            award;
+
+            badge.style.position =
+            "fixed";
+
+            badge.style.left =
+            "50%";
+
+            badge.style.top =
+            (15+index*10)+"%";
+
+            badge.style.transform =
+            "translateX(-50%)";
+
+            badge.style.background =
+            "gold";
+
+            badge.style.padding =
+            "12px 25px";
+
+            badge.style.borderRadius =
+            "30px";
+
+            badge.style.fontWeight =
+            "bold";
+
+            badge.style.zIndex =
+            "99999";
+
+            badge.style.boxShadow =
+            "0 0 20px gold";
+
+            document.body.appendChild(
+            badge);
+
+            setTimeout(()=>{
+                badge.remove();
+            },4000);
+
+        },index*600);
+
+    });
+}
+
+
+/* =========================
+   🚀 SECRET HERO MODE
+========================= */
+
+let clicks = 0;
+
+document.querySelector(
+".photo-frame img"
+).addEventListener(
+"click",
+()=>{
+
+    clicks++;
+
+    if(clicks === 5){
+
+        fireworks();
+
+        document.body.style.background =
+        "linear-gradient(135deg,#000,#ff9800)";
+
+        const hero =
+        document.createElement("div");
+
+        hero.innerHTML =
+        "🚀 SUPER DAD MODE UNLOCKED 🚀";
+
+        hero.style.position =
+        "fixed";
+
+        hero.style.top =
+        "50%";
+
+        hero.style.left =
+        "50%";
+
+        hero.style.transform =
+        "translate(-50%,-50%)";
+
+        hero.style.fontSize =
+        "50px";
+
+        hero.style.fontWeight =
+        "bold";
+
+        hero.style.color =
+        "gold";
+
+        hero.style.zIndex =
+        "99999";
+
+        document.body.appendChild(hero);
+
+        setTimeout(()=>{
+            hero.remove();
+        },4000);
+    }
+
+});
+</script>
+
+
+
+
+<script>
+
+const music = document.getElementById("bgMusic");
+
+// Try to autoplay when page loads
+window.addEventListener("load", () => {
+    music.play().catch(() => {
+        console.log("Autoplay blocked by browser");
+    });
+});
+
+function playMusic(){
+    music.play();
+}
+
+function pauseMusic(){
+    music.pause();
+}
+
+function changeVolume(v){
+    music.volume = v;
+}
+
+function celebrate(){
+    music.play();   // Start music
+    showBalloons(); // Balloons
+    createHearts(); // Hearts & stars
+}
+function showBalloons(){
+
+    const container =
+    document.getElementById("balloon-container");
+
+    const colors=[
+        "#ff6b6b",
+        "#feca57",
+        "#48dbfb",
+        "#1dd1a1",
+        "#5f27cd",
+        "#ff9ff3",
+        "#54a0ff"
+    ];
+
+    for(let i=0;i<50;i++){
+
+        const balloon =
+        document.createElement("div");
+
+        balloon.className="balloon";
+
+        balloon.style.left =
+        Math.random()*100+"vw";
+
+        balloon.style.background =
+        colors[Math.floor(
+            Math.random()*colors.length
+        )];
+
+        balloon.style.animationDuration =
+        (4+Math.random()*4)+"s";
+
+        container.appendChild(balloon);
+
+        setTimeout(()=>{
+            balloon.remove();
+        },8000);
+    }
+}
+function fireworks() {
+
+    for(let burst = 0; burst < 5; burst++) {
+
+        const centerX = Math.random() * window.innerWidth;
+        const centerY = Math.random() * (window.innerHeight * 0.6);
+
+        for(let i = 0; i < 25; i++) {
+
+            const particle = document.createElement("div");
+
+            particle.innerHTML = "✨";
+            particle.style.position = "fixed";
+            particle.style.left = centerX + "px";
+            particle.style.top = centerY + "px";
+            particle.style.fontSize = "22px";
+            particle.style.pointerEvents = "none";
+            particle.style.zIndex = "9999";
+
+            document.body.appendChild(particle);
+
+            const angle = Math.random() * Math.PI * 2;
+            const distance = 80 + Math.random() * 120;
+
+            particle.animate(
+            [
+                {
+                    transform: "translate(0,0) scale(1)",
+                    opacity: 1
+                },
+                {
+                    transform: `translate(
+                        ${Math.cos(angle)*distance}px,
+                        ${Math.sin(angle)*distance}px
+                    ) scale(0.5)`,
+                    opacity: 0
+                }
+            ],
+            {
+                duration: 1500,
+                easing: "ease-out"
+            });
+
+            setTimeout(() => {
+                particle.remove();
+            }, 1500);
+        }
+    }
+}
+function createHearts(){
+
+    for(let i=0;i<30;i++){
+
+        const heart =
+        document.createElement("div");
+
+        heart.className="heart";
+
+        heart.innerHTML =
+        Math.random()>0.5 ? "💙" : "⭐";
+
+        heart.style.left =
+        Math.random()*100+"vw";
+
+        heart.style.bottom="0";
+
+        document.body.appendChild(heart);
+
+        setTimeout(()=>{
+            heart.remove();
+        },5000);
+    }
+}
+function dadWisdom(){
+
+    const quotes = [
+
+        "👑 A father is someone you look up to no matter how tall you grow.",
+
+        "💙 Thank you for every sacrifice you've made for our family.",
+
+        "🏆 Dad, your love is my greatest strength.",
+
+        "🚀 You taught me to dream big and work hard.",
+
+        "⭐ Every day I'm grateful to have you as my father.",
+
+        "💪 A father's strength is measured by his love.",
+
+        "❤️ My first hero, my forever hero."
+    ];
+
+    const popup = document.createElement("div");
+
+    popup.innerHTML =
+    quotes[Math.floor(Math.random()*quotes.length)];
+
+    popup.style.position = "fixed";
+    popup.style.top = "50%";
+    popup.style.left = "50%";
+    popup.style.transform = "translate(-50%,-50%) scale(0)";
+    popup.style.background =
+    "linear-gradient(135deg,#2563eb,#1e3a8a)";
+    popup.style.color = "white";
+    popup.style.padding = "30px";
+    popup.style.borderRadius = "25px";
+    popup.style.fontSize = "24px";
+    popup.style.fontWeight = "bold";
+    popup.style.textAlign = "center";
+    popup.style.maxWidth = "500px";
+    popup.style.zIndex = "99999";
+    popup.style.boxShadow =
+    "0 0 40px rgba(37,99,235,.8)";
+
+    document.body.appendChild(popup);
+
+    popup.animate([
+        {
+            transform:"translate(-50%,-50%) scale(0)",
+            opacity:0
+        },
+        {
+            transform:"translate(-50%,-50%) scale(1.1)",
+            opacity:1
+        },
+        {
+            transform:"translate(-50%,-50%) scale(1)",
+            opacity:1
+        }
+    ],{
+        duration:600,
+        fill:"forwards"
+    });
+
+    setTimeout(()=>{
+
+        popup.animate([
+            {opacity:1},
+            {opacity:0}
+        ],{
+            duration:800,
+            fill:"forwards"
+        });
+
+        setTimeout(()=>{
+            popup.remove();
+        },800);
+
+    },3500);
+}
+function dadCertificate(){
+
+    const cert=document.createElement("div");
+
+    cert.innerHTML=`
+    <h1>🏆 CERTIFICATE OF EXCELLENCE 🏆</h1>
+    <h2>Awarded To</h2>
+    <h1>👑 BEST DAD 👑</h1>
+    <p>For endless love, support and sacrifices.</p>
+    `;
+
+    cert.style.position="fixed";
+    cert.style.inset="40px";
+    cert.style.background="white";
+    cert.style.border="10px solid gold";
+    cert.style.borderRadius="20px";
+    cert.style.padding="40px";
+    cert.style.textAlign="center";
+    cert.style.zIndex="99999";
+
+    document.body.appendChild(cert);
+
+    setTimeout(()=>{
+        cert.remove();
+    },6000);
+}
+function cinemaMode(){
+
+    document.body.style.filter="brightness(1.3)";
+
+    document.querySelector(".card").animate([
+        {transform:"scale(1)"},
+        {transform:"scale(1.08)"}
+    ],{
+        duration:1000,
+        fill:"forwards"
+    });
+
+    fireworks();
+}
+</script>
+<footer>
+  <b>
+    <i>© 2026 Naksh Goyal/Kashish Goyal/Krishna4x/mata shree</i>
+  </b>
+</footer>
+</body>
+</html>
